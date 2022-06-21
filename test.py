@@ -1,12 +1,35 @@
+
+#با سلام و عرض خسته نباشید 
+
+#پروژه( Raid )مبانی کامپیوتر استاد کاوه رضایی 
+
+#با همکاری گروهی ( نام اعضای گروه )
+#پارسا اقایی 
+#مهدی قاسمی 
+#مریم برزگر 
+
+#این پروژه در گیت هاب انجام شده است 
+
+#لینک گیت هاب :
+#https://github.com/parsaa18/Raid-Simulation.git
+
 from prettytable import PrettyTable
 
 type_of_Raid = PrettyTable(['Raid 0','Raid 1','Raid  10'])
 
 type_of_Raid.add_row(['inter number 0','inter number 1','inter number 10'])
 
-print ('choose type of Raid from under table : ','\n\n',type_of_Raid,'\n')
+print ('\n\nchoose type of Raid from under table : ','\n\n',type_of_Raid,'\n')
 
-type_Raid_choosen = int (input ('which type of Raid ? : '))
+type_Raid = [0,1,10]
+
+while True :
+    type_Raid_choosen = int (input ('which type of Raid ? : '))
+    
+    if type_Raid_choosen in type_Raid :
+        break
+    else :
+        print('\n\n'+'please inter a correct number ','\n\n')  
 
 type_of_data =PrettyTable(['data matchtable','saved data in pc'])
 
@@ -14,7 +37,15 @@ type_of_data.add_row(['inter M','inter S '])
 
 print ('\n'+'which type of data do you have ? : ','\n\n',type_of_data,'\n')
 
-type_data_choosen = input('which type of data ? ')
+type_data = ['m','s']
+
+while True :
+    type_data_choosen = input('which type of data ? ')
+    type_data_choosen = type_data_choosen.lower()
+    if type_data_choosen in type_data :
+        break 
+    else :
+        print ('\n\n'+'please inter a correct noune ','\n\n')
 
 type_data_choosen = type_data_choosen.lower()
 
@@ -127,7 +158,7 @@ if type_data_choosen == 'm' :
                       
 if type_data_choosen == 's' :
     
-    data_storage_path = input ('\ninter your data_storage_path ')
+    data_storage_path = input ('\ninter your data_storage_path : ')
 
     data_storage_path = open (data_storage_path,'r')
 
@@ -201,6 +232,7 @@ if type_data_choosen == 's' :
 
         else :
             print ('\nresult for Raid 0 : ','\n\n','DISK 1 : ',s3,'\n\n','DISK 2 : ',s3)
+            
 #Raid 10 for saved data in pc
             
     if type_Raid_choosen == 10 :
